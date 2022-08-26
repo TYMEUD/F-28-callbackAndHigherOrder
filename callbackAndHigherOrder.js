@@ -50,9 +50,9 @@ const first = (arr, firstName) => firstName(arr[0])
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-first(names, firstName => {
-  console.log('The first name in names is ' + firstName)
-})
+// first(names, firstName => {
+//   console.log('The first name in names is ' + firstName)
+// })
 
 
 
@@ -72,9 +72,9 @@ const last = (arr, lastName) => lastName(arr[6])
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-last(names, lastName => {
-  console.log('The last name in names is ' + lastName)
-})
+// last(names, lastName => {
+//   console.log('The last name in names is ' + lastName)
+// })
 
 
 
@@ -89,26 +89,26 @@ last(names, lastName => {
 
 // CODE HERE 
 
-const contains = (arr, name, result) => {
-  if(arr.includes(name) === true) {
-    result(true)
-  } else{
-    result(false)
-  }
-}
+// const contains = (arr, name, result) => {
+//   if(arr.includes(name) === true) {
+//     result(true)
+//   } else{
+//     result(false)
+//   }
+// }
 
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-contains(names, 'Colt', result => {
-  if(result === true){
-    console.log('Colt is in the array')
-  } else {
-    console.log('Colt is not in the array')
-  }
-})
+// contains(names, 'Colt', result => {
+//   if(result === true){
+//     console.log('Colt is in the array')
+//   } else {
+//     console.log('Colt is not in the array')
+//   }
+// })
 
 
 
@@ -122,18 +122,19 @@ contains(names, 'Colt', result => {
 
 // CODE HERE
 
-function uniq(arr, cb){
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = i + 1; j < arr.length; j++) {
-      if (arr[i] === arr[j]) {
-        arr.splice(j, 1)
-        j--
-      }
-    }
-  }
-  cb(arr)
-}
+// function uniq(arr, cb){
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = i + 1; j < arr.length; j++) {
+//       if (arr[i] === arr[j]) {
+//         arr.splice(j, 1)
+//         j--
+//       }
+//     }
+//   }
+//   cb(arr)
+// }
 
+// uniq(names, uniqArr => console.log(`The new names array with all the duplicate items removed is ${uniqArr}`))
 
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
@@ -155,6 +156,13 @@ function uniq(arr, cb){
 
 // CODE HERE 
 
+// const each = (arr, callbackName) => {
+//   arr.forEach((item, index) => callbackName(item, index))
+// }
+// each(names, (item, index) => {
+//   console.log(`The item at index ${index} is ${item}`)
+// })
+
 
 /*
   Invoke the each function, passing in the names array and a callback function.
@@ -166,6 +174,7 @@ function uniq(arr, cb){
 // CODE HERE
 
 
+
 ////////// PROBLEM 7 //////////
 
 /*
@@ -175,30 +184,36 @@ function uniq(arr, cb){
 
 // Do not edit the code below.
 
-// var users = [
-//   {
-//     id: '12d',
-//     email: 'tyler@gmail.com',
-//     name: 'Tyler',
-//     address: '167 East 500 North'
-//   },
-//   {
-//     id: '15a',
-//     email: 'cahlan@gmail.com',
-//     name: 'Cahlan',
-//     address: '135 East 320 North'
-//   },
-//   {
-//     id: '16t',
-//     email: 'ryan@gmail.com',
-//     name: 'Ryan',
-//     address: '192 East 32 North'
-//   },
-// ]
+var users = [
+  {
+    id: '12d',
+    email: 'tyler@gmail.com',
+    name: 'Tyler',
+    address: '167 East 500 North'
+  },
+  {
+    id: '15a',
+    email: 'cahlan@gmail.com',
+    name: 'Cahlan',
+    address: '135 East 320 North'
+  },
+  {
+    id: '16t',
+    email: 'ryan@gmail.com',
+    name: 'Ryan',
+    address: '192 East 32 North'
+  },
+]
 // Do not edit the code above.
 
 // CODE HERE 
-
+const getUserById = (arr, id, cb) => {
+  for (let i = 0; i < arr.length; i++) {
+    if(arr[i].id === id) {
+      cb(arr[i])
+    }
+  }
+}
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
